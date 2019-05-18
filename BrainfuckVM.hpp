@@ -7,28 +7,28 @@
 #include <stdexcept>
 #include <cstdio>
 
-#define OPTIMIZE_BRAINFUCK
+#define OPTIMIZE_BRAINFUCK 1
 
 enum class Instruction {
-	add,
-	incr,
-	prnt,
-	read,
-	jmp,
+    add,
+    incr,
+    prnt,
+    read,
+    jmp,
 };
 
 struct Bytecode_Op {
-	Instruction op;
-	int64_t value;
+    Instruction op;
+    int64_t value;
 };
 
 class Brainfuck_VM {
 public:
-	void load_program(std::string);
-	void run();
+    void load_program(std::string);
+    void run();
 
 private:
-	std::vector<Bytecode_Op> bytecode;
+    std::vector<Bytecode_Op> bytecode;
 };
 
 #endif // !BRAINFUCK_VM_HPP_INCLUDE
