@@ -2,10 +2,10 @@
 #define BRAINFUCK_VM_HPP_INCLUDE
 
 #include <cstdint>
+#include <cstdio>
+#include <stdexcept>
 #include <string>
 #include <vector>
-#include <stdexcept>
-#include <cstdio>
 
 #define OPTIMIZE_BRAINFUCK 1
 
@@ -25,7 +25,7 @@ struct Bytecode_Op {
 class Brainfuck_VM {
 public:
     void load_program(std::string);
-    void run();
+    void run() const;
 
 private:
     std::vector<Bytecode_Op> bytecode;
